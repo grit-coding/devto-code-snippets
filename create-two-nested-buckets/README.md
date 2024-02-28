@@ -43,15 +43,23 @@ export AWS_DEFAULT_REGION=us-east-1
 
 3. **Create a CloudFormation Stack**
 
-  ```bash
-  aws cloudformation deploy --template-file ./packaged-template.json --stack-name <your stack name>
-  ```
+   Deploy your packaged template to create the CloudFormation stack. This step will set up the nested S3 buckets specified in your template.
 
-4. ** Delete a CloudFormation Stack**
+   ```bash
+   aws cloudformation deploy --template-file ./packaged-template.json --stack-name <your stack name>
+   ```
+   
+4. **Verify Stack and Bucket Creation**
 
-  ```bash
-  aws cloudformation delete-stack --stack-name <your stack name>
-  ```
+   After deploying the stack, verify its creation in the AWS Console. Check both the CloudFormation and S3 sections to ensure that the stack and the nested S3 buckets have been successfully created.
+   
+6. **Delete a CloudFormation Stack**
+
+   To remove the CloudFormation stack, use the following command.
+
+   ```bash
+   aws cloudformation delete-stack --stack-name <your stack name>
+   ```
 
 ## Additional Information
 
