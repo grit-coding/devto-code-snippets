@@ -64,5 +64,5 @@ export AWS_DEFAULT_REGION=us-east-1
 
 ## Additional Information
 
-The main purpose of this guide is to demonstrate the creation of a CloudFormation nested stack, which in turn will create two S3 buckets. For more detailed information, you may refer to a related blog post or additional AWS documentation.
+The main purpose of this guide is to demonstrate the creation of a CloudFormation nested stack, which in turn will create two S3 buckets. For more detailed information, you may refer to a related [blog post](https://dev.to/gritcoding/creating-s3-buckets-using-cloudformation-via-aws-cli-1c1b) or additional AWS documentation.
 
