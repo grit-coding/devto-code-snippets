@@ -3,6 +3,8 @@
 
 This guide outlines the process of creating a CloudFormation nested stack to generate two S3 buckets using AWS CLI and CloudFormation.
 
+![flow chart](https://github.com/grit-coding/DEV-community-posts/blob/main/create-two-nested-buckets/images/flow-chart.png)
+
 ## Prerequisites
 - AWS CLI installed on your machine.
 - Proper AWS credentials configured with the necessary permissions.
