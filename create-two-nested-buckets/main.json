@@ -1,5 +1,5 @@
 {
-    "AWSTemplateFormatVersion" : "2010-09-09",
+    "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "Test CF template to demonstrate nested stack creation",
     "Parameters": {
         "Environment": {
@@ -11,38 +11,38 @@
             "Default": "gritcoding"
         }
     },
-    "Resources" : {
-        "S3CatStack" : {
-	       "Type" : "AWS::CloudFormation::Stack",
-	       "Properties" : {
-            "Parameters": {
-                "ProjectName": {
-                    "Ref": "ProjectName"
+    "Resources": {
+        "S3CatStack": {
+            "Type": "AWS::CloudFormation::Stack",
+            "Properties": {
+                "Parameters": {
+                    "ProjectName": {
+                        "Ref": "ProjectName"
+                    },
+                    "Environment": {
+                        "Ref": "Environment"
+                    },
+                    "Application": "cat",
+                    "ExpirationInDays": 0
                 },
-                "Environment": {
-                    "Ref": "Environment"
-                },
-                "Application": "cat",
-                "ExpirationInDays": 0
-            },
-            "TemplateURL" : "S3Template.json"
-	       }
-        },
-        "S3DogStack" : {
-            "Type" : "AWS::CloudFormation::Stack",
-            "Properties" : {
-             "Parameters": {
-                 "ProjectName": {
-                     "Ref": "ProjectName"
-                 },
-                 "Environment": {
-                     "Ref": "Environment"
-                 },
-                 "Application": "dog",
-                 "ExpirationInDays": 0
-             },
-             "TemplateURL" : "S3Template.json"
+                "TemplateURL": "S3Template.json"
             }
-         }
+        },
+        "S3DogStack": {
+            "Type": "AWS::CloudFormation::Stack",
+            "Properties": {
+                "Parameters": {
+                    "ProjectName": {
+                        "Ref": "ProjectName"
+                    },
+                    "Environment": {
+                        "Ref": "Environment"
+                    },
+                    "Application": "dog",
+                    "ExpirationInDays": 0
+                },
+                "TemplateURL": "S3Template.json"
+            }
+        }
     }
-} 
+}

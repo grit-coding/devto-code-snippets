@@ -2,93 +2,93 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "S3 bucket template",
     "Parameters": {
-      "Environment": {
-        "Type": "String"
-      },
-      "ProjectName": {
-        "Type": "String"
-      },
-      "Application": {
-        "Type": "String"
-      },
-      "ExpirationInDays": {
-        "Type": "Number"
-      }
+        "Environment": {
+            "Type": "String"
+        },
+        "ProjectName": {
+            "Type": "String"
+        },
+        "Application": {
+            "Type": "String"
+        },
+        "ExpirationInDays": {
+            "Type": "Number"
+        }
     },
     "Conditions": {
-      "LifeCycleCondition": {
-        "Fn::Not": [
-            {
-                "Fn::Equals": [
+        "LifeCycleCondition": {
+            "Fn::Not": [
                 {
-                    "Ref": "ExpirationInDays"
-                },
-                0
-                ]
-            }
+                    "Fn::Equals": [
+                        {
+                            "Ref": "ExpirationInDays"
+                        },
+                        0
+                    ]
+                }
             ]
-      }
+        }
     },
     "Resources": {
-      "CFS3Bucket": {
-        "Type": "AWS::S3::Bucket",
-        "Properties": {
-          "BucketName": {
-            "Fn::Join": [
-              "-",
-              [
-                {
-                  "Ref": "ProjectName"
+        "CFS3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            {
+                                "Ref": "ProjectName"
+                            },
+                            {
+                                "Ref": "Environment"
+                            },
+                            {
+                                "Ref": "Application"
+                            }
+                        ]
+                    ]
                 },
-                {
-                  "Ref": "Environment"
+                "LifecycleConfiguration": {
+                    "Fn::If": [
+                        "LifeCycleCondition",
+                        {
+                            "Rules": [
+                                {
+                                    "ExpirationInDays": {
+                                        "Ref": "ExpirationInDays"
+                                    },
+                                    "Status": "Enabled"
+                                }
+                            ]
+                        },
+                        {
+                            "Ref": "AWS::NoValue"
+                        }
+                    ]
                 },
-                {
-                  "Ref": "Application"
+                "PublicAccessBlockConfiguration": {
+                    "BlockPublicAcls": "true",
+                    "BlockPublicPolicy": "true",
+                    "IgnorePublicAcls": "true",
+                    "RestrictPublicBuckets": "true"
                 }
-              ]
-            ]
-          },
-          "LifecycleConfiguration": {
-            "Fn::If": [
-              "LifeCycleCondition",
-              {
-                "Rules": [
-                  {
-                    "ExpirationInDays": {
-                      "Ref": "ExpirationInDays"
-                    },
-                    "Status": "Enabled"
-                  }
-                ]
-              },
-              {
-                "Ref": "AWS::NoValue"
-              }
-            ]
-          },
-          "PublicAccessBlockConfiguration": {
-            "BlockPublicAcls": "true",
-            "BlockPublicPolicy": "true",
-            "IgnorePublicAcls": "true",
-            "RestrictPublicBuckets": "true"
-          }
+            }
         }
-      }
     },
     "Outputs": {
-      "CFS3Bucket": {
-        "Value": {
-          "Ref": "CFS3Bucket"
+        "CFS3Bucket": {
+            "Value": {
+                "Ref": "CFS3Bucket"
+            }
+        },
+        "CFS3BucketArn": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "CFS3Bucket",
+                    "Arn"
+                ]
+            }
         }
-      },
-      "CFS3BucketArn": {
-        "Value": {
-          "Fn::GetAtt": [
-            "CFS3Bucket",
-            "Arn"
-          ]
-        }
-      }
     }
-  }
+}
