@@ -1,6 +1,6 @@
 
 # Create Nested S3 Buckets using AWS CloudFormation via AWS CLI
-![flow chart](https://github.com/grit-coding/DEV-community-posts/blob/main/create-two-nested-buckets/images/flow-chart.png)
+![flow chart](https://github.com/grit-coding/DevToCodeSnippets/blob/main/Tutorials/create-two-nested-buckets/images/flow-chart.png)
 
 This guide outlines the process of creating a CloudFormation nested stack to generate two S3 buckets using AWS CLI and CloudFormation.
 
