@@ -1,6 +1,6 @@
 # Create a VPC Using Terraform on AWS
 
-![flow chart](https://github.com/grit-coding/DevToCodeSnippets/blob/main/Tutorials/create-vpc-terraform/images/terraform-vpc.png)
+![flow chart](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tutorials/create-vpc-terraform/images/terraform-vpc.png)
 
 This guide describes the process of creating a Virtual Private Cloud (VPC) in AWS using Terraform.
 
