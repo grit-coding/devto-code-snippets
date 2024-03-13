@@ -67,4 +67,4 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
 
 ## Additional Information
    
-This guide focuses on the basics of creating a VPC in AWS using Terraform. For more detailed information, refer to the [Terraform documentation](https://developer.hashicorp.com/terraform/docs) or a related blog post.
+This guide focuses on the basics of creating a VPC in AWS using Terraform. For more detailed information, refer to the [Terraform documentation](https://developer.hashicorp.com/terraform/docs) or a related [blog post](https://dev.to/gritcoding/building-infrastructure-from-scratch-creating-a-vpc-with-terraform-2hmc).
