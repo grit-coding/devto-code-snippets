@@ -10,12 +10,17 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region  = "us-east-1"
 }
 
 variable "environment" {
   description = "The deployment environment (e.g., dev, qa, prod)"
   type        = string
+  
+  validation {
+    condition     = contains(["dev", "qa", "prod"], var.environment)
+    error_message = "The environment must be one of: dev, qa, or prod."
+  }
 }
 
 variable "env_cidr_map" {
@@ -28,6 +33,7 @@ variable "env_cidr_map" {
   }
 }
 
-resource "aws_vpc" "example" {
+resource "aws_vpc" "main" {
   cidr_block = "10.${lookup(var.env_cidr_map, var.environment, "0")}.0.0/16"
+  assign_generated_ipv6_cidr_block = true
 }
