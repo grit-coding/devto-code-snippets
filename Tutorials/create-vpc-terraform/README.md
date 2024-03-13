@@ -35,7 +35,6 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
    ```bash
    terraform init
    ```
-   ![terraform init](https://github.com/grit-coding/DevToCodeSnippets/blob/main/Tutorials/create-vpc-terraform/images/init.gif)
 
 2. **Apply the Terraform Configuration**
 
@@ -46,6 +45,9 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
    ```
 
    When prompted, enter `dev`, `qa`, or `prod` for the environment value. Confirm the action by entering `yes`. 
+ 
+   If you provide an incorrect environment value, it will throw an error.
+   ![validation](https://github.com/grit-coding/DevToCodeSnippets/blob/main/Tutorials/create-vpc-terraform/images/validation.gif)
 
 3. **Verify VPC Creation**
    
