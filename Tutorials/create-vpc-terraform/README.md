@@ -35,6 +35,7 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
    ```bash
    terraform init
    ```
+   ![terraform init](https://github.com/grit-coding/DevToCodeSnippets/blob/main/Tutorials/create-vpc-terraform/images/init.gif)
 
 2. **Apply the Terraform Configuration**
 
