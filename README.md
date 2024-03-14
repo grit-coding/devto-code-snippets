@@ -1,7 +1,7 @@
 
-# DevToCodeSnippets
+# devto-code-snippets
 
-Welcome to DevToCodeSnippets! This GitHub repository is a curated collection of source codes and detailed READMEs accompanying each of my tech blog posts. It's designed to be a practical reference for developers, programmers, and tech enthusiasts.
+Welcome to devto-code-snippets! This GitHub repository is a curated collection of source codes and detailed READMEs accompanying each of my tech blog posts. It's designed to be a practical reference for developers, programmers, and tech enthusiasts.
 
 ## Repository Structure
 
