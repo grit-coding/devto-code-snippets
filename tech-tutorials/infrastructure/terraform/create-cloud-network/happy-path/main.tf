@@ -95,6 +95,8 @@ resource "aws_internet_gateway" "internet_gateway" {
 }
 
 
+# add NACL, NAT gateway, configure private router
+
 # Create SG, role for session manager, EC2 instance to test accessibility 
 data "aws_ami" "amazon_linux" {
   most_recent = true
