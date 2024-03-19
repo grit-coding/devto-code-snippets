@@ -95,7 +95,7 @@ resource "aws_internet_gateway" "internet_gateway" {
 }
 
 
-# add NACL, NAT gateway, configure private router
+# add NACL, configure NACL, NAT gateway, configure private router
 
 # Create SG, role for session manager, EC2 instance to test accessibility 
 data "aws_ami" "amazon_linux" {
@@ -108,6 +108,8 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# Create an IAM role with Session Manager to enable access to EC2 instances via the AWS console's Session Manager. 
+# For SSH access from your local machine, create a key pair in the AWS console and use a Terraform variable to reference it.
 resource "aws_iam_role" "ec2_ssm_role" {
   name = "ec2-ssm-role"
 
@@ -128,7 +130,6 @@ resource "aws_iam_role" "ec2_ssm_role" {
     Terraform = "true"
   }
 }
-
 resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core" {
   role       = aws_iam_role.ec2_ssm_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
