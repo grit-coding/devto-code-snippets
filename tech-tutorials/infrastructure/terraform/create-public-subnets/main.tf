@@ -27,9 +27,11 @@ resource "aws_internet_gateway" "internet_gateway" {
 resource "aws_subnet" "public_subnets" {
   for_each                = var.public_subnets
   vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = cidrsubnet(aws_vpc.vpc.cidr_block, 8, each.value + 100)
+  cidr_block              = cidrsubnet(aws_vpc.vpc.cidr_block, 8, each.value)
   availability_zone       = tolist(data.aws_availability_zones.available.names)[each.value]
   map_public_ip_on_launch = true
+  assign_ipv6_address_on_creation = true
+  ipv6_cidr_block               = cidrsubnet(aws_vpc.vpc.ipv6_cidr_block, 8, each.value)
 
   tags = {
     Name      = each.key
