@@ -120,16 +120,6 @@ resource "aws_security_group" "ec2_sg" {
   vpc_id      = aws_vpc.vpc.id
 }
 
-resource "aws_security_group_rule" "ec2_sg_ingress_rule" {
-  type              = "ingress"
-  from_port         = 22
-  protocol          = "tcp"
-  to_port           = 22
-  cidr_blocks       = [aws_vpc.vpc.cidr_block]
-  ipv6_cidr_blocks  = [aws_vpc.vpc.ipv6_cidr_block]
-  security_group_id = aws_security_group.ec2_sg.id
-}
-
 resource "aws_security_group_rule" "ec2_sg_egress_rule" {
   type              = "egress"
   to_port           = 0
