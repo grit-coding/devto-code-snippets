@@ -1,4 +1,3 @@
-
 provider "aws" {
   region = "us-east-1"
 }
@@ -129,19 +128,12 @@ resource "aws_security_group_rule" "ec2_sg_ingress_rule" {
   security_group_id = aws_security_group.ec2_sg.id
 }
 
-resource "aws_security_group_rule" "ec2_sg_egress_rule_ipv4" {
+resource "aws_security_group_rule" "ec2_sg_egress_rule" {
   type              = "egress"
   to_port           = 0
   protocol          = "-1"
   from_port         = 0
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.ec2_sg.id
-}
-resource "aws_security_group_rule" "ec2_sg_egress_rule_ipv6" {
-  type              = "egress"
-  to_port           = 0
-  protocol          = "-1"
-  from_port         = 0
   ipv6_cidr_blocks  = ["::/0"]
   security_group_id = aws_security_group.ec2_sg.id
 }
