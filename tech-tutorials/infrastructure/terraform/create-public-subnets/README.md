@@ -1,0 +1,1 @@
+![diagram](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/create-public-subnets/images/diagram.jpeg) 
