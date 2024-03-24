@@ -71,15 +71,6 @@ resource "aws_route_table_association" "public" {
 
 
 # Create SG, role for session manager, EC2 instance to test accessibility 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-  }
-}
 
 # Create an IAM role with Session Manager to enable access to EC2 instances via the AWS console's Session Manager. 
 # For SSH access from your local machine, create a key pair in the AWS console and use a Terraform variable to reference it.
@@ -133,7 +124,7 @@ resource "aws_security_group_rule" "ec2_sg_egress_rule" {
 
 resource "aws_instance" "public_instance" {
   for_each                    = aws_subnet.public_subnets
-  ami                         = data.aws_ami.amazon_linux.id
+  ami                         = "ami-0c101f26f147fa7fd"
   instance_type               = "t2.micro"
   subnet_id                   = each.value.id
   associate_public_ip_address = true
