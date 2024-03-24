@@ -116,7 +116,7 @@ resource "aws_iam_instance_profile" "ec2_ssm_instance_profile" {
 
 resource "aws_security_group" "ec2_sg" {
   name        = "EC2_Instance_SG"
-  description = "Allow SSH"
+  description = "Security group for EC2 instances with default outbound rules"
   vpc_id      = aws_vpc.vpc.id
 }
 
