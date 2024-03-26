@@ -2,7 +2,7 @@
 
 ![Diagram illustrating the AWS infrastructure](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/create-public-subnets/images/diagram.png)
 
-This repository, `create-public-subnets`, provides the integrated Terraform source code discussed in our blog post. For an in-depth guide and context, check out: [Blog Post Title](link).
+This repository, `create-public-subnets`, provides the integrated Terraform source code discussed in our blog post. For an in-depth guide and context, check out: [Building Infrastructure from Scratch: Creating Public Subnets in AWS](https://dev.to/gritcoding/building-infrastructure-from-scratch-creating-public-subnets-in-aws-5c0f).
 
 ## Deployment Steps
 
