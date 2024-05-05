@@ -1,0 +1,2 @@
+`terraform apply -var-file="custom.tfvars"`
+![result](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/host-static-site-s3-cloudfront-custom-domain/images/result.png)
