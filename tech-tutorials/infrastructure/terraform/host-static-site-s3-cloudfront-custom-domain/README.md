@@ -11,7 +11,7 @@ cd DevToCodeSnippets/tech-tutorials/infrastructure/terraform/host-static-site-s3
 
 ### 1. Change Values in custom.tfvars
 Before deployment, make sure to add values to the custom.tfvars file. For more details, refer to the
-[Blog Post](https://dev.to/gritcoding/hosting-a-static-website-on-s3-bucket-with-cloudfront-and-custom-domain-terraform-23m7-temp-slug-6014446?preview=1e68f210859e1f1ccdb0b1350f0161f54a779702441332ea90c34cc7baa42780eaa9649973cd1578f422cc6520f65c174f934a68439a561345319e89)
+[Blog Post](https://dev.to/gritcoding/hosting-a-static-website-on-s3-bucket-with-cloudfront-and-a-custom-domain-using-terraform-2829)
 
 ### 2. Initialise Terraform and Apply
 To initialise Terraform and apply the configuration, execute:
