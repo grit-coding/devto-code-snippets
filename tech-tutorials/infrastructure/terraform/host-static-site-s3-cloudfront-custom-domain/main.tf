@@ -121,7 +121,7 @@ resource "aws_cloudfront_distribution" "static_site_distribution" {
     domain_name = "${aws_s3_bucket.landing_page_bucket.bucket}.s3-website-${var.region}.amazonaws.com" // static site domain name
     origin_id   = local.s3_origin_id
 
-    // The custom_origin_config mimics the website endpoint settings configured via the AWS Console.
+    // The custom_origin_config is for the website endpoint settings configured via the AWS Console.
     // https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CustomOriginConfig.html
     custom_origin_config {
       http_port              = 80
@@ -173,7 +173,7 @@ resource "aws_cloudfront_distribution" "static_site_distribution" {
     Environment = var.environment
   }
 
-  // The viewer_certificate mimics ssl certificate settings configured via the AWS Console.
+  // The viewer_certificate is for the ssl certificate settings configured via the AWS Console.
   viewer_certificate {
     cloudfront_default_certificate = false
     ssl_support_method  = "sni-only"
