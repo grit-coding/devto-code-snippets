@@ -1,10 +1,10 @@
 name: Slack Notification Example
 
 on:
-  pull_request: 
-    types:
-      - opened
-      - edited
+#   pull_request: 
+#     types:
+#       - opened
+#       - edited
   push:
     branches:
       - main
@@ -116,7 +116,7 @@ jobs:
       - name: Dummy deploy (replace me)
         run: |
           echo "Pretending to deploy..."
-          exit 1
+        #   exit 1
 
   notify-end:
     if: always()
