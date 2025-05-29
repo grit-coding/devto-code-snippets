@@ -1,10 +1,10 @@
 name: Slack Notification Example
 
 on:
-  # pull_request: 
-  #   types:
-  #     - opened
-  #     - edited
+#   pull_request: 
+#     types:
+#       - opened
+#       - edited
   push:
     branches:
       - main
@@ -18,7 +18,7 @@ on:
           - test
 
 env:
-  SLACK_CHANNEL_ID: Your Slack Channel ID
+  SLACK_CHANNEL_ID: C08UA57JKF0
   SLACK_ENV_NAME: TEST
   SLACK_REPO_NAME: devto-code-snippets
   PIPELINE_URL: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
@@ -116,8 +116,7 @@ jobs:
       - name: Dummy deploy (replace me)
         run: |
           echo "Pretending to deploy..."
-          # Simulate failure:
-          # exit 1
+        #   exit 1
 
   notify-end:
     if: always()
