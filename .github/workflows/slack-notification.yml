@@ -116,8 +116,7 @@ jobs:
       - name: Dummy deploy (replace me)
         run: |
           echo "Pretending to deploy..."
-          # Simulate failure:
-          # exit 1
+          exit 1
 
   notify-end:
     if: always()
