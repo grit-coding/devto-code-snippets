@@ -5,7 +5,7 @@ This project contains example scripts to upload single and bulk JSON documents t
 ## Prerequisites
 
 - An OpenSearch domain must be created with a master user.
-- Follow the YouTube video guide. Audio is in Korean, but AWS Console and OpenSearch Dashboard are in English, so it's easy to follow.
+- Follow the [YouTube video guide](https://www.youtube.com/watch?v=WrMLpKsX6QI). Audio is in Korean, but AWS Console and OpenSearch Dashboard are in English, so it's easy to follow.
 
 ## Make Scripts Executable
 
