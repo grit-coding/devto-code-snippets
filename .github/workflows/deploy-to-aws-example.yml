@@ -13,8 +13,8 @@ permissions:
 
 env:
   AWS_REGION: eu-west-2
-  YOUR_ACCOUNT: 000000000000
-  BUCKET_NAME: gritcoidng-bucket-test 
+  YOUR_ACCOUNT: 439464659685
+  BUCKET_NAME: gritcoidng-bucket-demo
 
 jobs:
   deploy:
