@@ -5,8 +5,6 @@ on:
     branches:
       - main
   pull_request: # test purpose
-    types:
-      - opened
   workflow_dispatch:
 
 permissions:
@@ -15,7 +13,8 @@ permissions:
 
 env:
   AWS_REGION: eu-west-2
-  YOUR_ACCOUNT: 439464659685
+  YOUR_ACCOUNT: 000000000000
+  BUCKET_NAME: gritcoidng-bucket-test
 
 jobs:
   deploy:
@@ -37,5 +36,5 @@ jobs:
 
       - name: Create S3 Bucket
         run: |
-          aws s3 mb s3://gritcoding-bucket-test --region ${{ env.AWS_REGION }}
-          echo "S3 bucket gritcoding-bucket-test created successfully"
+          aws s3 mb s3://${{env.BUCKET_NAME}} --region ${{ env.AWS_REGION }}
+          echo "S3 bucket ${{env.BUCKET_NAME}} created successfully"
