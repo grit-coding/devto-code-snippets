@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export const handler = async (event) => {
   const request = event.Records[0].cf.request;
   const headers = request.headers;
