@@ -73,12 +73,6 @@ If you're using AWS as your cloud provider, install the AWS CLI.
   ```
 - Other platforms: Download from [AWS CLI documentation](https://aws.amazon.com/cli/)
 
-**Configure AWS credentials:**
-
-```bash
-aws configure
-```
-
 **Verify installation:**
 
 ```bash
