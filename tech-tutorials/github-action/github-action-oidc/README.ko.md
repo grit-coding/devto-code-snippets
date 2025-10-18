@@ -1,6 +1,6 @@
 # GitHub Actions OIDC로 AWS 배포하기
 
-*다른 언어로 읽기: [English](README.md), [한국어](README.ko.md)*
+_다른 언어로 읽기: [English](README.md), [한국어](README.ko.md)_
 
 GitHub Actions에서 OIDC (OpenID Connect)를 사용해 AWS에 배포하는 예제입니다. **AWS 시크릿이나 액세스 키 없이도** 안전하게 배포 가능합니다.
 
@@ -50,8 +50,8 @@ cp deploy-to-aws-example.yml .github/workflows/
 
 ```yaml
 env:
-  AWS_REGION: eu-west-2              # 사용할 AWS 리전
-  YOUR_ACCOUNT: 000000000000         # AWS 계정 ID
+  AWS_REGION: eu-west-2 # 사용할 AWS 리전
+  YOUR_ACCOUNT: 000000000000 # AWS 계정 ID
   BUCKET_NAME: gritcoidng-bucket-test # 만들 버킷 이름 (고유해야 함)
 ```
 
@@ -66,6 +66,7 @@ role-to-assume: arn:aws:iam::${{env.YOUR_ACCOUNT}}:role/github-action-role
 ### 4. 실행 시점 설정
 
 기본 설정으로는 다음 경우에 워크플로우가 실행됩니다:
+
 - `main` 브랜치에 push할 때
 - 수동으로 실행할 때
 
@@ -76,7 +77,7 @@ on:
   push:
     branches:
       - main
-  pull_request:  # 이 줄 주석 해제
+  pull_request: # 이 줄 주석 해제
   workflow_dispatch:
 ```
 
@@ -85,10 +86,11 @@ on:
 ```yaml
 permissions:
   id-token: write # OIDC 인증에 필요
-  contents: read  # 코드 체크아웃에 필요
+  contents: read # 코드 체크아웃에 필요
 ```
 
 워크플로우는:
+
 1. 코드를 체크아웃합니다
 2. OIDC를 사용하여 AWS 자격 증명을 구성합니다
 3. AWS 아이덴티티를 확인합니다
