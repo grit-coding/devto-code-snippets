@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+*.d.ts
+*.js.map
+
+# CDKTF generated files
+cdktf.out/
+.gen/
+
+# Coverage
+coverage/
+*.lcov
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Config files that might have specific formatting
+*.config.js
+jest.config.js
