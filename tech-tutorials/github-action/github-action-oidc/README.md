@@ -17,12 +17,12 @@ This workflow example shows you how to securely authenticate with AWS using OIDC
 
 ## Prerequisites
 
-**� Important:** Before using this workflow, you must set up the OIDC provider and IAM role in your AWS account.
+**⚠️ Important:** Before using this workflow, you must set up the OIDC provider and IAM role in your AWS account.
 
 ### Setup Steps
 
 1. **Follow the YouTube Tutorial** (Korean)
-   - =� [YouTube Video Link - Placeholder]
+   - 📺 [GitHub Actions OIDC AWS 배포 가이드](https://youtu.be/K6BgWya79-E?si=YjrUtnzZV6mUtbJF)
    - This video guides you through:
      - Creating an OpenID Connect provider in AWS IAM
      - Creating an IAM role with trust policy for GitHub Actions
@@ -96,27 +96,27 @@ The workflow:
 
 ## Key Benefits of OIDC
 
- **No AWS secrets in GitHub** - No need to store AWS access keys
- **More secure** - Temporary credentials with automatic rotation
- **Better compliance** - No long-lived credentials
- **Easier management** - Centralized access control through IAM roles
+✅ **No AWS secrets in GitHub** - No need to store AWS access keys
+✅ **More secure** - Temporary credentials with automatic rotation
+✅ **Better compliance** - No long-lived credentials
+✅ **Easier management** - Centralized access control through IAM roles
 
 ## Troubleshooting
 
 - **"Not authorized to perform sts:AssumeRoleWithWebIdentity"**
-  � Check your IAM role's trust policy allows GitHub as OIDC provider
+  → Check your IAM role's trust policy allows GitHub as OIDC provider
 
 - **"Bucket already exists"**
-  � Change the `BUCKET_NAME` to a unique value
+  → Change the `BUCKET_NAME` to a unique value
 
 - **"Access Denied"**
-  � Verify your IAM role has the necessary S3 permissions
+  → Verify your IAM role has the necessary S3 permissions
 
 ## Resources
 
-- =� [Setup Tutorial (Korean) - Placeholder]
-- =� [GitHub Docs: OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
-- =� [AWS Docs: IAM OIDC Identity Providers](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html)
+- 📺 [GitHub Actions OIDC AWS 배포 가이드](https://youtu.be/K6BgWya79-E?si=YjrUtnzZV6mUtbJF)
+- 📖 [GitHub Docs: OIDC with AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
+- 📖 [AWS Docs: IAM OIDC Identity Providers](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html)
 
 ## License
 
