@@ -22,7 +22,7 @@ OIDC를 활용하면 AWS 자격 증명을 GitHub에 저장하지 않고도 안�
 ### 설정 방법
 
 1. **YouTube 튜토리얼 보기** (한국어)
-   - 🎬 [YouTube 비디오 링크 - Placeholder]
+   - 📺 [GitHub Actions OIDC AWS 배포 가이드](https://youtu.be/K6BgWya79-E?si=YjrUtnzZV6mUtbJF)
    - 영상에서 다음 내용을 다룹니다:
      - AWS IAM에 OpenID Connect 프로바이더 만들기
      - GitHub Actions용 IAM 역할 만들고 신뢰 정책 설정하기
@@ -114,7 +114,7 @@ permissions:
 
 ## 참고 자료
 
-- 🎬 [설정 튜토리얼 (한국어) - Placeholder]
+- 📺 [GitHub Actions OIDC AWS 배포 가이드](https://youtu.be/K6BgWya79-E?si=YjrUtnzZV6mUtbJF)
 - 📖 [GitHub 문서: AWS와 OIDC](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
 - 📖 [AWS 문서: IAM OIDC 아이덴티티 프로바이더](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers_create_oidc.html)
 
