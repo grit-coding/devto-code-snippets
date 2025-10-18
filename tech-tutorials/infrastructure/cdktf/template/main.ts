@@ -1,5 +1,5 @@
-import { Construct } from "constructs";
-import { App, TerraformStack } from "cdktf";
+import { Construct } from 'constructs';
+import { App, TerraformStack } from 'cdktf';
 
 class MyStack extends TerraformStack {
   constructor(scope: Construct, id: string) {
@@ -10,5 +10,5 @@ class MyStack extends TerraformStack {
 }
 
 const app = new App();
-new MyStack(app, "template");
+new MyStack(app, 'template');
 app.synth();
