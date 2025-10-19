@@ -59,34 +59,41 @@ aws s3api put-bucket-versioning \
 
 In your **target AWS account**, create an IAM role that allows the management account to deploy resources.
 
-**Trust Policy** (replace `MANAGEMENT_ACCOUNT_ID` with your management account ID):
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::MANAGEMENT_ACCOUNT_ID:root"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-```
+**Trust Policy:**
+Create a role with a trust policy that allows your management account to assume it. The trust relationship should allow `sts:AssumeRole` from your management account.
 
 **Permissions Policy:**
 Attach appropriate permissions based on what you need to deploy. For ECR, you'll need ECR permissions.
 
-### 4. Update Configuration
+### 4. Update Configuration in main.ts
 
-Update the stack configuration with your specific information:
+Update [main.ts](main.ts) with your specific information:
 
-- **S3 Backend Configuration**: Update with your S3 bucket name and region
-- **Target Account Role ARN**: Update with the role ARN from step 3
-- **ECR Stack Settings**: Update with your repository names and configurations
-- **AWS Region**: Set your preferred deployment region
+```typescript
+const sharedConfig = {
+  s3StateBucket: 'your-bucket-name', // S3 bucket for state (from step 2)
+  profile: 'your-aws-profile',        // Your AWS CLI profile
+  env: 'demo',
+  region: 'eu-west-2',                // Your preferred region
+  projectPrefix: 'demo-infra',
+};
+
+new EcrStack(app, 'ecr-demo-stack', {
+  s3ObjectKey: `${keyPrefix}/ecr-stack.tfstate`,
+  ecrName: 'your-ecr-repository-name',
+  targetAccNumber: 123456789012,      // Your target account ID
+  assumeRoleName: 'YourCrossAccountRole', // IAM role from step 3
+  ...sharedConfig,
+});
+```
+
+**Required updates:**
+- `s3StateBucket`: Your S3 bucket name from step 2
+- `profile`: Your AWS CLI profile name
+- `region`: Your preferred AWS region
+- `ecrName`: Your ECR repository name
+- `targetAccNumber`: Your target AWS account ID
+- `assumeRoleName`: The IAM role name created in step 3
 
 ### 5. Deploy Infrastructure
 
