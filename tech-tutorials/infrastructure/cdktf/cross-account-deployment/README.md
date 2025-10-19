@@ -10,7 +10,7 @@ A video walkthrough of this tutorial is available in Korean on YouTube: [https:/
 
 This setup demonstrates cross-account deployment with the following architecture:
 
-![Cross-Account Deployment Architecture](images/1%20diagram.png)
+![Cross-Account Deployment Architecture](images/diagram.png)
 
 **Key Points:**
 
