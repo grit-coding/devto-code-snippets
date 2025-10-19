@@ -29,10 +29,12 @@ export class EcrStack extends TerraformStack {
 
     const provider = new AwsProvider(this, 'aws-provider', {
       region: options.region,
-      assumeRole: {
-        roleArn: `arn:aws:iam::${options.targetAccNumber}:role/${options.assumeRoleName}`,
-        sessionName: options.assumeRoleName,
-      },
+      assumeRole: [
+        {
+          roleArn: `arn:aws:iam::${options.targetAccNumber}:role/${options.assumeRoleName}`,
+          sessionName: options.assumeRoleName,
+        },
+      ],
       defaultTags: [
         {
           tags: {
