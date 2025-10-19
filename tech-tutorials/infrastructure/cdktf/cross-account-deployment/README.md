@@ -4,15 +4,13 @@ This tutorial demonstrates how to deploy AWS infrastructure to a different AWS a
 
 ## Tutorial Video
 
-A video walkthrough of this tutorial is available in Korean on YouTube: [Link to be added]
+A video walkthrough of this tutorial is available in Korean on YouTube: [https://youtu.be/wzIUvcmb2bQ](https://youtu.be/wzIUvcmb2bQ)
 
 ## Overview
 
 This setup demonstrates cross-account deployment with the following architecture:
 
-```
-[Diagram to be added]
-```
+![Cross-Account Deployment Architecture](images/1%20diagram.png)
 
 **Key Points:**
 
