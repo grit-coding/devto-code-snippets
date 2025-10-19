@@ -1,6 +1,6 @@
 # Create a VPC Using Terraform on AWS
 
-![flow chart](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/create-vpc-terraform/images/terraform-vpc.png) 
+![flow chart](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/create-vpc-terraform/images/terraform-vpc.png)
 
 This guide describes the process of creating a Virtual Private Cloud (VPC) in AWS using Terraform.
 
@@ -44,15 +44,14 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
    terraform apply
    ```
 
-   When prompted, enter `dev`, `qa`, or `prod` for the environment value. Confirm the action by entering `yes`. 
- 
+   When prompted, enter `dev`, `qa`, or `prod` for the environment value. Confirm the action by entering `yes`.
+
    If you provide an incorrect environment value, it will throw an error.
    ![validation](https://github.com/grit-coding/DevToCodeSnippets/blob/main/tech-tutorials/infrastructure/terraform/create-vpc-terraform/images/validation.gif)
 
 3. **Verify VPC Creation**
-   
+
    In the AWS Console, navigate to the VPC section in the region specified in your main.tf file to confirm the VPC has been created with the correct CIDR block.
-   
 
 4. **Clean Up Resources**
 
@@ -66,5 +65,5 @@ The `main.tf` file in your `create-vpc-terraform` project defines the Terraform 
    This command will remove all resources created by Terraform in this configuration.
 
 ## Additional Information
-   
+
 This guide focuses on the basics of creating a VPC in AWS using Terraform. For more detailed information, refer to the [Terraform documentation](https://developer.hashicorp.com/terraform/docs) or a related [blog post](https://dev.to/gritcoding/building-infrastructure-from-scratch-creating-a-vpc-with-terraform-2hmc).

@@ -1,6 +1,6 @@
 # GitHub Actions OIDC AWS Deployment Example
 
-*Read this in other languages: [English](README.md), [한국어](README.ko.md)*
+_Read this in other languages: [English](README.md), [한국어](README.ko.md)_
 
 This repository demonstrates how to deploy to AWS using GitHub Actions with OIDC (OpenID Connect) authentication - **no AWS secrets or access keys required!**
 
@@ -50,8 +50,8 @@ Edit the workflow file and update these environment variables:
 
 ```yaml
 env:
-  AWS_REGION: eu-west-2              # Change to your AWS region
-  YOUR_ACCOUNT: 000000000000         # Change to your AWS account ID
+  AWS_REGION: eu-west-2 # Change to your AWS region
+  YOUR_ACCOUNT: 000000000000 # Change to your AWS account ID
   BUCKET_NAME: gritcoidng-bucket-test # Change to your desired bucket name
 ```
 
@@ -66,6 +66,7 @@ role-to-assume: arn:aws:iam::${{env.YOUR_ACCOUNT}}:role/github-action-role
 ### 4. Configure Trigger Events
 
 By default, the workflow triggers on:
+
 - Push to `main` branch
 - Manual workflow dispatch
 
@@ -76,7 +77,7 @@ on:
   push:
     branches:
       - main
-  pull_request:  # Uncomment this line
+  pull_request: # Uncomment this line
   workflow_dispatch:
 ```
 
@@ -85,10 +86,11 @@ on:
 ```yaml
 permissions:
   id-token: write # Required for OIDC authentication
-  contents: read  # Required to checkout code
+  contents: read # Required to checkout code
 ```
 
 The workflow:
+
 1. Checks out your code
 2. Configures AWS credentials using OIDC
 3. Verifies the AWS identity

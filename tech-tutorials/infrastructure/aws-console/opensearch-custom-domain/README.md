@@ -24,16 +24,19 @@ AUTH="your-username:your-password"
 ENDPOINT="https://your-opensearch-domain/_bulk"         # for upload-bulk.sh
 ENDPOINT="https://your-opensearch-domain/${INDEX_NAME}/_doc" # for upload-single.sh
 ```
+
 Replace your-username:your-password with your OpenSearch master credentials.
 Replace your-opensearch-domain with your actual OpenSearch endpoint.
 Replace my-index with the name of your index.
 
 ### Run Scripts
+
 To upload a single document run this:
 
 ```bash
 ./upload-single.sh
 ```
+
 To upload multiple documents from the bulk/ folder:
 
 ```bash

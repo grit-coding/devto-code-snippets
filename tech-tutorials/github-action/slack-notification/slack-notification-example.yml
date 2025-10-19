@@ -1,7 +1,7 @@
 name: Slack Notification Example
 
 on:
-  # pull_request: 
+  # pull_request:
   #   types:
   #     - opened
   #     - edited
@@ -60,16 +60,14 @@ jobs:
           echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
-
       - name: Check if SLACK_BOT_TOKEN is present
         run: |
-            if [ -z "${{ secrets.SLACK_BOT_TOKEN }}" ]; then
-            echo "SLACK_BOT_TOKEN is missing!"
-            exit 1
-            else
-            echo "SLACK_BOT_TOKEN is set."
-            fi
-
+          if [ -z "${{ secrets.SLACK_BOT_TOKEN }}" ]; then
+          echo "SLACK_BOT_TOKEN is missing!"
+          exit 1
+          else
+          echo "SLACK_BOT_TOKEN is set."
+          fi
 
       - name: Notify start on Slack
         id: notify
