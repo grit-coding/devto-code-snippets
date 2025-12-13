@@ -80,7 +80,7 @@ See what changes will be deployed:
 cdk diff
 ```
 
-![CDK Diff Example](spike-cdk/images/cdk-diff.png)
+![CDK Diff Example](images/cdk-diff.png)
 *Example of `cdk diff` showing changes between local code and deployed stack*
 
 ### 4. Deploy your stack
@@ -95,7 +95,7 @@ cdk deploy
 
 After running `cdk bootstrap`, you can view the created resources in the AWS CloudFormation console:
 
-![CDK Toolkit Stack](spike-cdk/images/cdk-toolkit.png)
+![CDK Toolkit Stack](images/cdk-toolkit.png)
 *The CDKToolkit stack created by `cdk bootstrap` containing the S3 bucket, IAM roles, and other deployment resources*
 
 ## Useful Commands
@@ -123,7 +123,7 @@ After running `cdk bootstrap`, you can view the created resources in the AWS Clo
 
 ### Core Concepts
 - **[CDK Bootstrap Explained](cdk-bootstrap-explained.md)** - Deep dive into what `cdk bootstrap` creates, how the asset bucket works, and managing bootstrap resources
-- **[CDK State Management](spike-cdk/CDK-STATE-MANAGEMENT.md)** - Understanding how CDK tracks infrastructure state, handling concurrent deployments, and differences from Terraform
+- **[CDK State Management](CDK-STATE-MANAGEMENT.md)** - Understanding how CDK tracks infrastructure state, handling concurrent deployments, and differences from Terraform
 
 ### Key Takeaways
 - **Bootstrap is per account/region**: You only need to run `cdk bootstrap` once per AWS account and region combination
