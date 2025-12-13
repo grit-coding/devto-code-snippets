@@ -93,10 +93,7 @@ cdk deploy
 
 ## CDK Bootstrap Resources
 
-After running `cdk bootstrap`, you can view the created resources in the AWS CloudFormation console:
-
-![CDK Toolkit Stack](images/cdk-toolkit.png)
-*The CDKToolkit stack created by `cdk bootstrap` containing the S3 bucket, IAM roles, and other deployment resources*
+After running `cdk bootstrap`, you can view the created resources in the AWS CloudFormation console
 
 ## Useful Commands
 
