@@ -7,13 +7,6 @@ export class ClientVpnDemoStack extends cdk.Stack {
     super(scope, id, props);
 
     // ---------------------------------------------------------------------------
-    // VPN CIDR resolution
-    // Priority: CDK context → CLIENT_VPN_CIDR env var → default 172.16.0.0/22
-    // ---------------------------------------------------------------------------
-    const vpnCidr =
-      this.node.tryGetContext('clientVpnCidr') ?? process.env.CLIENT_VPN_CIDR ?? '172.16.0.0/22';
-
-    // ---------------------------------------------------------------------------
     // VPC — 10.0.0.0/16, DNS support + hostnames enabled
     //
     // Built with L1 (Cfn) constructs so we get exactly 2 route tables
@@ -121,31 +114,6 @@ export class ClientVpnDemoStack extends cdk.Stack {
     });
 
     // ---------------------------------------------------------------------------
-    // Security Group — allows SSH (22) + HTTP (80) from VPN CIDR only
-    // ---------------------------------------------------------------------------
-    const sg = new ec2.CfnSecurityGroup(this, 'InstanceSg', {
-      vpcId: vpc.ref,
-      groupDescription: 'Allow SSH and HTTP from VPN clients only',
-      securityGroupIngress: [
-        {
-          ipProtocol: 'tcp',
-          fromPort: 22,
-          toPort: 22,
-          cidrIp: vpnCidr,
-          description: 'SSH from VPN clients',
-        },
-        {
-          ipProtocol: 'tcp',
-          fromPort: 80,
-          toPort: 80,
-          cidrIp: vpnCidr,
-          description: 'HTTP from VPN clients',
-        },
-      ],
-      tags: [{ key: 'Name', value: 'client-vpn-demo-sg' }],
-    });
-
-    // ---------------------------------------------------------------------------
     // CloudFormation Outputs
     // ---------------------------------------------------------------------------
     new cdk.CfnOutput(this, 'VpcId', {
@@ -160,12 +128,7 @@ export class ClientVpnDemoStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, 'PrivateSubnetIds', {
       value: `${privateSubnet1.ref},${privateSubnet2.ref}`,
-      description: 'Private (isolated) subnet IDs',
-    });
-
-    new cdk.CfnOutput(this, 'SecurityGroupId', {
-      value: sg.attrGroupId,
-      description: 'Security group ID for EC2 instance',
+      description: 'Private subnet IDs — launch the EC2 demo instance here',
     });
 
     // ---------------------------------------------------------------------------
