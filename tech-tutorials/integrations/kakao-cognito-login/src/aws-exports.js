@@ -1,16 +1,15 @@
 const awsExports = {
   Auth: {
     Cognito: {
-      userPoolId: 'eu-west-1_xxxxxxxx',
-      userPoolClientId: 'xxxxxxxxxxxxxxxxxxxxxxxxxx',
+      userPoolId: import.meta.env.VITE_USER_POOL_ID,
+      userPoolClientId: import.meta.env.VITE_USER_POOL_CLIENT_ID,
       loginWith: {
         email: true,
-        // or username: true depending on your pool setup
         oauth: {
-          domain: 'your-domain.auth.eu-west-1.amazoncognito.com',
-          scopes: ['openid', 'email', 'profile'],
-          redirectSignIn: ['http://localhost:5173/'],
-          redirectSignOut: ['http://localhost:5173/'],
+          domain: import.meta.env.VITE_COGNITO_DOMAIN,
+          scopes: ['openid', 'email'],
+          redirectSignIn: [import.meta.env.VITE_REDIRECT_SIGN_IN],
+          redirectSignOut: [import.meta.env.VITE_REDIRECT_SIGN_OUT],
           responseType: 'code',
         },
       },

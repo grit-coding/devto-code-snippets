@@ -57,7 +57,7 @@ export default function App() {
     try {
       await signInWithRedirect({
         provider: {
-          custom: 'Kakao',
+          custom: 'kakao', //소셜 로그인 프로바이더 이름과 동일
         },
       });
     } catch (err) {
