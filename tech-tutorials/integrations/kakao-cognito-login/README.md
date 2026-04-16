@@ -43,31 +43,9 @@ npm -v
 > 카카오 로그인에서 이메일 등 민감 정보 동의 항목을 사용하려면 **비즈 앱으로 전환**이 필요합니다.  
 > [카카오 개발자 콘솔](https://developers.kakao.com) > 앱 설정 > 비즈니스 > 비즈 앱 전환 메뉴에서 신청할 수 있습니다.
 
-1. [Kakao Developers](https://developers.kakao.com)에서 애플리케이션 생성
-2. **앱 설정 > 비즈니스** 에서 비즈 앱 전환
-3. **플랫폼 > Web** 에서 사이트 도메인 등록 (예: `http://localhost:5173`)
-4. **카카오 로그인 > 활성화** 설정
-5. **카카오 로그인 > Redirect URI** 에 Cognito 호스팅 UI 콜백 URL 등록
-   - 형식: `https://<your-cognito-domain>/oauth2/idpresponse`
-6. **앱 키 > REST API 키** 와 **Client Secret** 확인
-
 ### AWS 설정
 
 - AWS 계정 및 Cognito 리소스를 생성할 수 있는 IAM 권한 필요
-- **Cognito User Pool** 생성
-  - 로그인 옵션: 이메일
-- **앱 클라이언트** 생성
-  - 호스팅 UI 활성화
-  - 콜백 URL: `http://localhost:5173/`
-  - 로그아웃 URL: `http://localhost:5173/`
-  - OAuth 스코프: `openid`, `email`
-- **소셜 자격 증명 공급자 (IdP)** 에서 카카오 추가
-  - 공급자 유형: OIDC
-  - 공급자 이름: `Kakao`
-  - 클라이언트 ID: 카카오 REST API 키
-  - 클라이언트 시크릿: 카카오 Client Secret
-  - 발급자(Issuer): `https://kauth.kakao.com`
-  - 속성 매핑: `email → email`, `nickname → name`
 
 > 카카오 및 Cognito 설정 상세 과정은 유튜브 영상을 참고하세요.
 
