@@ -96,7 +96,7 @@ export default function App() {
     try {
       await signInWithRedirect({
         provider: {
-          custom: 'Kakao',
+          custom: 'Kakao', // OIDC 공급자 이름과 동일해야 합니다
         },
       });
     } catch (err) {
